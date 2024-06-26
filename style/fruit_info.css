@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 50px;
+}
+
+nav a {
+  margin: 0 15px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 140px);
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.fruit-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.info {
+  text-align: left;
+  max-width: 400px;
+}
+
+.info h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.info p,
+.info ul {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 18px;
+}

@@ -1,3 +1,5 @@
+https://amankanz.github.io/fruits_info/
+
 # Fruits Info
 
 ## Overview

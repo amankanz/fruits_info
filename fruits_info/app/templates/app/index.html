@@ -1,0 +1,51 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruits Info</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="{{ 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' }}"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+        src="{% static 'assets/FRUITS_INFO_LOGO-removebg-preview.png' %}"
+        alt="Logo"
+        class="logo"
+      />
+      <a href="#" class="contact-us">Contact us</a>
+    </header>
+    <main>
+      <div class="hero">
+        <h1>Fruits Info</h1>
+        <div class="hero-desc">
+          <p>Discover fun facts and health benefits of your favorite fruits.</p>
+        </div>
+        <div class="buttons">
+          <button class="upload-button"><i class="fa fa-camera"></i></button>
+
+          <a href="{% url 'details_page' %}">
+            <button class="upload-button" type="">
+              <i class="fa fa-plus"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      Powered by
+      <a href="https://github.com/amankanz" target="_blank">Kaneza</a> &
+      <a href="https://github.com/amunipelumi" target="_blank">Amuni</a> -
+      Fruits Info
+    </footer>
+  </body>
+</html>

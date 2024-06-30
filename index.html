@@ -31,12 +31,15 @@
           <button class="upload-button" id="cameraButton">
             <i class="fa fa-camera"></i>
           </button>
-
-          <a href="./fruit_info.html">
-            <button class="upload-button" type="">
-              <i class="fa fa-plus"></i>
-            </button>
-          </a>
+          <button class="upload-button" id="uploadButton">
+            <i class="fa fa-plus"></i>
+          </button>
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display: none"
+          />
         </div>
       </div>
     </main>
@@ -49,5 +52,6 @@
 
     <!-- JS -->
     <script src="./script/camera.js"></script>
+    <script src="./script/upload.js"></script>
   </body>
 </html>

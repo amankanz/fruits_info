@@ -5,6 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="csrf-token" content="{% csrf_token %}"> -->
     <title>Fruits Info</title>
     <link rel="stylesheet" href="{% static 'style/fruit_info.css' %}" />
   </head>
@@ -27,7 +28,11 @@
         </div>
         <div class="info">
           <!-- this name of the fruit has to be a variable that will be filled by the models output -->
-          <h1>Name of the Fruit</h1>
+          {% if fruit %}
+            <h1>{{fruit}}</h1>
+          {% else %}
+            <h1>Name of the Fruit</h1>
+          {% endif %}
           <p><strong>Classification:</strong></p>
           <p>Scientific Name: Scientific Name</p>
           <p>Family: Family Name</p>

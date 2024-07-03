@@ -1,11 +1,15 @@
-const fruit_image = document.getElementById("fruitImage");
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("load", function () {
-  let imageData = this.localStorage.getItem("imageData");
+  const fruit_image = document.getElementById("fruitImage");
 
-  if (imageData) {
-    fruit_image.src = imageData;
-  } else {
-    alert("No image data found.");
-  }
+  window.addEventListener("load", function () {
+    let imageData = this.localStorage.getItem("imageData");
+
+    if (imageData) {
+      fruit_image.src = imageData;
+    } else {
+      alert("No image data found.");
+    }
+  });
+  
 });

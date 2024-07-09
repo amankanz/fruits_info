@@ -10,7 +10,8 @@ from .classify import inference
 
 
 def homepage(request):
-    return render(request, 'app/index.html')
+    context = {'csrf_token': request.COOKIES.get('csrftoken')}
+    return render(request, 'app/index.html', context)
 
 
 def second_page(request):

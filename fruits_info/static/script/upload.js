@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   upload_button.addEventListener("click", function () {
     file_input.click();
   });
-  ////////
 
   file_input.addEventListener("change", function (ev) {
     const file = ev.target.files[0];
@@ -16,9 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       reader.onload = function (e) {
         let imageData = e.target.result;
         localStorage.setItem("imageData", imageData);
-        // window.location.href = detailspageUrl; // Access the global variable
 
-        // Code added
         fetch(detailspageUrl, {
           method: "POST",
           headers: {

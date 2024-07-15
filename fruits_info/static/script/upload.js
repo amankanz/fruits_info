@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           })
           .then((data) => {
-            console.log("Success:", data);
+            // console.log("Success:", data);
             window.location.href = detailspageUrl; // Redirect to the details page
           })
           .catch((error) => {

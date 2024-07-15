@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="csrf-token" content="{% csrf_token %}">
+    <!-- <meta name="csrf-token" content="{{ csrf_token }}"> -->
     <title>Fruits Info</title>
     <link rel="stylesheet" href="{% static 'style/style.css' %}"/>
 
@@ -56,11 +56,8 @@
 
     <!-- JS -->
     <script>
-      // Declare the URL once
-      const detailspageUrl = "{% url 'details_page' %}";
-      window.detailspageUrl = detailspageUrl; // Global access
       const csrftoken = "{{ csrf_token }}";
-      window.csrftoken = csrftoken;
+      const detailspageUrl = "{{ details_page }}";
     </script>
     <script src="{% static 'script/camera.js' %}"></script>
     <script src="{% static 'script/upload.js' %}"></script>

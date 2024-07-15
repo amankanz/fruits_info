@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.urls import reverse
 from io import BytesIO
 from PIL import Image
 import numpy as np
@@ -10,7 +11,8 @@ from .classify import inference
 
 
 def homepage(request):
-    context = {'csrf_token': request.COOKIES.get('csrftoken')}
+    second_page_url = reverse('details_page')
+    context = {'details_page': second_page_url}
     return render(request, 'app/index.html', context)
 
 
@@ -19,7 +21,7 @@ def second_page(request):
         data = json.loads(request.body)
         image_data = data.get('imageData')
         request.session['image_data'] = image_data
-        return JsonResponse({'message': 'ok'})
+        return JsonResponse({'ok': True})
     
     image_data = request.session.get('image_data')
     if image_data:

@@ -1,6 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const camera_button = document.getElementById("cameraButton");
+//   console.log('csrf:' + csrftoken);
+//   console.log('next:' + detailspageUrl)
 
   if (camera_button) {
       camera_button.addEventListener("click", function () {
@@ -45,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                   }
                               })
                               .then(data => {
-                                  console.log("Success:", data);
-                                  window.location.href = detailspageUrl; // Redirect to the details page
+                                //   console.log("Success:", data);
+                                  window.location.href = detailspageUrl; // redirect to the details page
                               })
                               .catch((error) => {
                                   console.error("Error:", error);

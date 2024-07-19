@@ -8,12 +8,13 @@ import json
 import base64
 
 from .classify import inference
+from .agent import health_benefits
 
 
 def homepage(request):
     second_page_url = reverse('details_page')
-    context = {'details_page': second_page_url}
-    return render(request, 'app/index.html', context)
+    ctx = {'details_page': second_page_url}
+    return render(request, 'app/index.html', context=ctx)
 
 
 def second_page(request):
@@ -25,10 +26,16 @@ def second_page(request):
     
     image_data = request.session.get('image_data')
     if image_data:
-            header, encoded = image_data.split(",", 1)
+            _, encoded = image_data.split(",", 1)
             data = base64.b64decode(encoded)
             image = np.float32(Image.open(BytesIO(data)))
             result = inference.fruit_classifier(image)
-            return render(request, 'app/fruit_info.html', context=result)
+            fruit_name = result['fruit']
+            benefits = health_benefits(fruit=fruit_name)
+            ctx = {
+                'fruit': fruit_name,
+                'benefits': benefits
+            }
+            return render(request, 'app/fruit_info.html', context=ctx)
 
     return render(request, 'app/fruit_info.html')  

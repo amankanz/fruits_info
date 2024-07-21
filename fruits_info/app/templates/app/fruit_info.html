@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fruits Info</title>
-    <link rel="stylesheet" href="{% static 'style/fruit_info.css' %}"/>
+    <link rel="stylesheet" href="{% static 'style/fruit_info.css' %}" />
   </head>
   <body>
     <header>
@@ -20,29 +20,20 @@
         <a href="#">Contact us</a>
       </nav>
     </header>
+    <div id="spinner" class="loader" style="display: none"></div>
     <main>
       <div class="content">
         <div class="fruit-box" id="fruitBox">
-          <img alt="Fruit Image" class="fruit-image" id="fruitImage"/>
+          <img alt="Fruit Image" class="fruit-image" id="fruitImage" />
         </div>
         <div class="info">
           <!-- this name of the fruit has to be a variable that will be filled by the models output -->
           {% if fruit %}
-            <h1>{{fruit}}</h1>
+          <h1>{{fruit}}</h1>
           {% else %}
-            <h1>Name of the Fruit</h1>
+          <h1>Name of the Fruit</h1>
           {% endif %}
-          <p><strong>Classification:</strong></p> <!-- i think this line should becomes more details -->
-          <p>Scientific Name: Scientific Name</p> <!-- this line should be a variable that will show up when there is a fruit -->
-          <!-- this lines all have to go
-          <p>Family: Family Name</p> 
-          <p><strong>Fun Facts:</strong></p> 
-          <ul> 
-            <li>Fun Fact 1</li>
-            <li>Fun Fact 2</li>
-          </ul> -->
-          <!-- this health benefits needs to go up above the fun facts, 
-           also, the list underneath will be a variable that the ai agent supplies -->
+
           <p><strong>Health Benefits:</strong></p>
           <div>
             {% if benefits %}

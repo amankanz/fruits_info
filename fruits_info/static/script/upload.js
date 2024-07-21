@@ -1,7 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const upload_button = document.getElementById("uploadButton");
   const file_input = document.getElementById("fileInput");
+  const spinner = document.getElementById("spinner");
+  const body = document.getElementsByTagName("body")[0];
 
   upload_button.addEventListener("click", function () {
     file_input.click();
@@ -15,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
       reader.onload = function (e) {
         let imageData = e.target.result;
         localStorage.setItem("imageData", imageData);
+
+        // Show the spinner
+        // body.classList.add("body-second-style");
+        spinner.style.display = "block";
 
         fetch(detailspageUrl, {
           method: "POST",
@@ -37,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .catch((error) => {
             console.error("Error:", error);
+          })
+          .finally(() => {
+            // Hide the spinner once the data is fetched or an error occurs
+            // body.classList.remove("body-second-style");
+            spinner.style.display = "none";
           });
       };
       reader.readAsDataURL(file);

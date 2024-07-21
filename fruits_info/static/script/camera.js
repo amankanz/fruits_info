@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
               localStorage.setItem("imageData", imageData);
 
               // Show the spinner
-              // body.classList.add("body-second-style");
               spinner.style.display = "block";
 
               fetch(detailspageUrl, {
@@ -59,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .finally(() => {
                   // Hide the spinner once the data is fetched or an error occurs
-                  // body.classList.remove("body-second-style");
                   spinner.style.display = "none";
                 });
             });

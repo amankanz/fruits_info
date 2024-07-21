@@ -1,18 +1,23 @@
+/* html {
+  background-color: #68928b;
+} */
+
 /* Loader */
-.body-second-style {
-  height: 100vh;
+/* .body-second-style {
+  background-color: #68928b;
+  height: 50vh;
   margin: auto auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #e3a40e; /* Blue */
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #e3a40e; /* Blue */
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 50px;
+  height: 50px;
   animation: spin 2s linear infinite;
 }
 

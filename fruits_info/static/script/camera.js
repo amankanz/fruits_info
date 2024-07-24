@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const camera_button = document.getElementById("cameraButton");
   const spinner = document.getElementById("spinner");
+
   //   console.log('csrf:' + csrftoken);
   //   console.log('next:' + detailspageUrl)
 
@@ -13,11 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
             let video = document.createElement("video");
             video.srcObject = stream;
             video.play();
-            document.body.appendChild(video);
+            document.getElementById("videoContainer").appendChild(video);
 
             let captureButton = document.createElement("button");
             captureButton.innerText = "Capture";
-            document.body.appendChild(captureButton);
+
+            document
+              .getElementById("videoContainer")
+              .appendChild(captureButton);
 
             captureButton.addEventListener("click", function () {
               let canvas = document.createElement("canvas");

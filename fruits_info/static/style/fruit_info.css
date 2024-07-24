@@ -50,7 +50,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 140px);
+  height: 100vh;
   padding: 2em 0;
   width: 100%;
 }

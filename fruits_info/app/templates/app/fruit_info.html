@@ -34,27 +34,40 @@
           <img alt="Fruit Image" class="fruit-image" id="fruitImage" />
         </div>
         <div class="info">
-          <!-- this name of the fruit has to be a variable that will be filled by the models output -->
+          
           {% if fruit %}
-          <h1>{{fruit}}</h1>
+
+            <h1>{{fruit}}</h1>
+
           {% else %}
-          <h1>Name of the Fruit</h1>
+
+            <h1>Name of Fruit</h1>
+
           {% endif %}
 
           <p><strong>Health Benefits:</strong></p>
           <div class="container-info">
+
             {% if benefits %}
-            <p>{{benefits}}</p>
+
+              {% for key, value in benefits.items %}
+
+                <h4>{{key}}</h4>
+                <p>{{value}}</p>
+
+              {% endfor %}
+
             {% else %}
-            <ul>
-              <li>Health Benefit 1</li>
-              <li>Health Benefit 2</li>
-            </ul>
+
+              <p>Error occured, please try again later.</p>
+
             {% endif %}
+
           </div>
         </div>
       </div>
     </main>
+    <br><br>
     <footer>
       Powered by
       <a href="https://github.com/amankanz" target="_blank">Kaneza</a> &

@@ -42,7 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
               let context = canvas.getContext("2d");
               context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
+              // Stop the video stream
               stream.getTracks().forEach((track) => track.stop());
+
+              // Remove video and buttons from the DOM
+              video.remove();
+              captureButton.remove();
+              cancelButton.remove();
 
               let imageData = canvas.toDataURL("image/png");
               localStorage.setItem("imageData", imageData);

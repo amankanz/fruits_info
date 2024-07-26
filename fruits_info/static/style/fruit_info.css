@@ -23,7 +23,8 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #e3a40e;
+  /* background-color: #e3a40e; */
+  background-color: #b38312;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,6 +55,7 @@ main {
   gap: 3rem;
   height: 75vh;
   padding: 2em 0;
+  margin-bottom: 3rem;
   width: 100%;
 }
 
@@ -61,10 +63,12 @@ main {
   width: 85%;
 }
 .disclaimer h3 {
-  color: #bb2329;
+  /* color: #bb2329; */
+  color: #7d1519;
 }
 .disclaimer p {
-  color: #e3a40e;
+  /* color: #e3a40e; */
+  color: #fff;
 }
 
 .content {
@@ -85,6 +89,10 @@ main {
   max-width: 400px;
   height: 20em;
   overflow-y: scroll;
+  /* border-top: 5px solid #c78f09;
+  border-bottom: 5px solid #c78f09;
+  border-radius: 5px; */
+  /* border-style: groove; */
 }
 
 .info h1 {
@@ -100,7 +108,8 @@ main {
 
 footer {
   padding: 20px 0;
-  background-color: #e3a40e;
+  /* background-color: #e3a40e; */
+  background-color: #b38312;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
   bottom: 0;
   width: 100%;

@@ -5,6 +5,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      href="{% static './assets/FRUITS_INFO_LOGO-removebg-preview.png' %}"
+      type="image/x-icon"
+    />
     <title>Fruits Info</title>
     <link rel="stylesheet" href="{% static 'style/fruit_info.css' %}" />
   </head>
@@ -34,40 +39,33 @@
           <img alt="Fruit Image" class="fruit-image" id="fruitImage" />
         </div>
         <div class="info">
-          
           {% if fruit %}
 
-            <h1>{{fruit}}</h1>
+          <h1>{{fruit}}</h1>
 
           {% else %}
 
-            <h1>Name of Fruit</h1>
+          <h1>Name of Fruit</h1>
 
           {% endif %}
 
           <p><strong>Health Benefits:</strong></p>
           <div class="container-info">
+            {% if benefits %} {% for key, value in benefits.items %}
 
-            {% if benefits %}
+            <h4>{{key}}</h4>
+            <p>{{value}}</p>
 
-              {% for key, value in benefits.items %}
+            {% endfor %} {% else %}
 
-                <h4>{{key}}</h4>
-                <p>{{value}}</p>
-
-              {% endfor %}
-
-            {% else %}
-
-              <p>Error occured, please try again later.</p>
+            <p>Error occured, please try again later.</p>
 
             {% endif %}
-
           </div>
         </div>
       </div>
     </main>
-    <br><br>
+    <br /><br />
     <footer>
       Powered by
       <a href="https://github.com/amankanz" target="_blank">Kaneza</a> &

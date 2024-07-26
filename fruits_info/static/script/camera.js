@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   const camera_button = document.getElementById("cameraButton");
+  const upload_button = document.getElementById("uploadButton");
   const spinner = document.getElementById("spinner");
 
-  //   console.log('csrf:' + csrftoken);
-  //   console.log('next:' + detailspageUrl)
+  function disableButtons() {
+    camera_button.disabled = true;
+    upload_button.disabled = true;
+  }
+
+  function enableButtons() {
+    camera_button.disabled = false;
+    upload_button.disabled = false;
+  }
 
   if (camera_button) {
     camera_button.addEventListener("click", function () {
@@ -18,10 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let captureButton = document.createElement("button");
             captureButton.innerText = "Capture";
+            let cancelButton = document.createElement("button");
+            cancelButton.innerText = "Cancel";
 
-            document
-              .getElementById("videoContainer")
-              .appendChild(captureButton);
+            document.getElementById("btn-container").appendChild(captureButton);
+            document.getElementById("btn-container").appendChild(cancelButton);
+
+            // Disabled the camera and the upload buttons to prevent additional clicks
+            disableButtons();
 
             captureButton.addEventListener("click", function () {
               let canvas = document.createElement("canvas");
@@ -54,16 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
                   }
                 })
                 .then((data) => {
-                  //   console.log("Success:", data);
-                  window.location.href = detailspageUrl; // redirect to the details page
+                  window.location.href = detailspageUrl; // Redirect to the details page
                 })
                 .catch((error) => {
                   console.error("Error:", error);
+                  // Hide the spinner if an error occurs
+                  spinner.style.display = "none";
+                  // Re-enable the buttons if an error occurs
+                  enableButtons();
                 })
                 .finally(() => {
                   // Hide the spinner once the data is fetched or an error occurs
                   spinner.style.display = "none";
                 });
+            });
+
+            cancelButton.addEventListener("click", function () {
+              stream.getTracks().forEach((track) => track.stop());
+              video.remove();
+              captureButton.remove();
+              cancelButton.remove();
+
+              // Re-enable the camera and upload button after canceling
+              enableButtons();
             });
           })
           .catch(function (error) {

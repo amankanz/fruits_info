@@ -5,6 +5,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+=======
+
+    <!-- Favicon -->
+    <link
+      href="{% static 'assets/FRUITS_INFO_LOGO-removebg-preview.png' %}"
+      type="image/x-icon"
+    />
+>>>>>>> 0f5a6a3c9439d520f6339c2976be30e2b5883964
     <title>Fruits Info</title>
     <link rel="stylesheet" href="{% static 'style/style.css' %}" />
     <link rel="stylesheet" href="{% static 'style/loader.css' %}" />
@@ -31,7 +40,6 @@
           <p>Discover fun facts and health benefits of your favorite fruits.</p>
         </div>
         <div class="buttons">
-          <!-- the images that will be captured/uploaded has to be temporarily stored so i can grab it as input for the model -->
           <button class="upload-button" id="cameraButton">
             <i class="fa fa-camera"></i>
           </button>
@@ -45,10 +53,14 @@
             style="display: none"
           />
         </div>
-        <p class="warning">Upload an image that is 1MB or smaller in size.</p>
+        <p class="warning">
+          Upload a fruit image that is 1MB or smaller in size.
+        </p>
         <div id="spinner" class="loader" style="display: none"></div>
       </div>
-      <div id="videoContainer" class="videoContainer"></div>
+      <div id="videoContainer" class="videoContainer">
+        <div id="btn-container" class="btn-container"></div>
+      </div>
     </main>
     <footer>
       Powered by

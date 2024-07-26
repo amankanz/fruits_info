@@ -107,7 +107,7 @@ main a {
 
 #main .videoContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -120,8 +120,9 @@ main a {
   width: 35em;
 }
 
-#main .videoContainer button {
-  background-color: #68928b;
+#main #btn-container button {
+  /* background-color: #68928b; */
+  background-color: #e3a40e;
   border-style: none;
   color: #f5f5f5;
   padding: 10px 15px;
@@ -130,8 +131,14 @@ main a {
   cursor: pointer;
 
   &:hover {
-    background-color: #e3a40e;
+    /* background-color: #e3a40e; */
+    background-color: #68928b;
   }
+}
+
+#btn-container {
+  display: flex;
+  gap: 2rem;
 }
 
 footer {

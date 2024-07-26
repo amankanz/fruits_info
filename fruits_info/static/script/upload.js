@@ -57,10 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
             spinner.style.display = "none";
             // Re-enable the buttons if an error occurs
             enableButtons();
-          })
-          .finally(() => {
-            // Hide the spinner once the data is fetched or an error occurs
-            spinner.style.display = "none";
           });
       };
       reader.readAsDataURL(file);
